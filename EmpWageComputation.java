@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 interface WageMethod	{
 
 	public void computeTotalEmpWage( CompanyEmpWage obj );
@@ -27,12 +29,11 @@ public void computeTotalEmpWage( CompanyEmpWage companyEmployee )	{
 		totalEmpHrs += empHrs;
 		empDailyWage = empHrs * companyEmployee.getEmpRatePerHour();
 			empDailyAndTotalWage.add( empDailyWage );
-			System.out.println("Day#: " + totalWorkingDays + " Emp Hr: " +  empHrs);
-}
+
 		empTotalWage = totalEmpHrs * companyEmployee.getEmpRatePerHour();
 		empDailyAndTotalWage.add( empTotalWage );
 		companyEmployee.setTotalEmpWage( empTotalWage );
-		System.out.println("Total Wage of " + companyEmployee.getCompanyName() + " Employee is " + companyEmployee.getTotalEmpWage());
+
 
 }
 
@@ -44,7 +45,29 @@ public void computeTotalEmpWage( CompanyEmpWage companyEmployee )	{
 		empwagecomputation.computeTotalEmpWage(company.get(0));
 		company.add( new CompanyEmpWage( "GOOGLE", 30, 20, 70 ));
 		empwagecomputation.computeTotalEmpWage(company.get(1));
-}
+
+		while( true )	{
+			System.out.println("Welcome to Employee wage portal");
+			System.out.println("Enter your choice to see the Total wage of an Employee of a particular company");
+			System.out.println("Press 1 for Bridgelabz");
+			System.out.println("Press 2 for Google");
+			System.out.println("Press 3 to Exit");
+			Scanner scanner = new Scanner(System.in);
+			int option = scanner.nextInt();
+			if( option == 1 )	{
+				System.out.println( "The Total Employee Wage of Bridgelabz is: " + company.get(0).getTotalEmpWage() );
+			}
+			else if( option == 2 )	{
+				System.out.println( "The Total Employee Wage of Google is: " + company.get(1).getTotalEmpWage() );
+			}
+			else if( option == 3 )	{
+				System.exit(0);
+			}
+			else	{
+				System.out.println("Invalid option \n Try again");
+			}
+			System.out.println();
+}}
 }
 class CompanyEmpWage	{
 
