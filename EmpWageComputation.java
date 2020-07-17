@@ -1,13 +1,15 @@
 public class EmpWageComputation {
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
-	public static final int EMP_RATE_PER_HOUR = 20;
-	public static final int NUM_OF_WORKING_DAYS = 20;
-	public static final int MAX_HRS_IN_MONTH = 100;
-public static int calTotalEmpWage( int totalEmpHrs )	{
-		return totalEmpHrs * EMP_RATE_PER_HOUR;
+	public static int EMP_RATE_PER_HOUR ;
+	public static int NUM_OF_WORKING_DAYS;
+	public static int MAX_HRS_IN_MONTH;
+	public EmpWageComputation( int EMP_RATE_PER_HOUR, int NUM_OF_WORKING_DAYS, int MAX_HRS_IN_MONTH )	{
+		this.EMP_RATE_PER_HOUR = EMP_RATE_PER_HOUR;
+		this.NUM_OF_WORKING_DAYS = NUM_OF_WORKING_DAYS;
+		this.MAX_HRS_IN_MONTH = MAX_HRS_IN_MONTH;
 	}
-	public static void main(String args[]) {
+public static int calTotalEmpWage( int totalEmpHrs )	{
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 		int empCheck = (int) ( Math.random() * 10 ) % 2;
 		while ( totalEmpHrs <= MAX_HRS_IN_MONTH &&
@@ -26,10 +28,26 @@ public static int calTotalEmpWage( int totalEmpHrs )	{
 		empWage = empHrs * EMP_RATE_PER_HOUR;
 		totalEmpHrs += empHrs;
 			System.out.println("Day#: " + totalWorkingDays + " Emp Hr: " +  empHrs);
-
+}
+return totalEmpHrs;
 
 }
-int totalEmpWage = calTotalEmpWage( totalEmpHrs );
-System.out.println("Total Emp Wage: " + totalEmpWage);
+public int calTotalEmpWage( int totalEmpHrs )	{
+		return totalEmpHrs * EMP_RATE_PER_HOUR;
+	}
+
+
+	public static void main(String args[]) {
+		EmpWageComputation companyA = new EmpWageComputation( 20, 20, 100 );
+		int companyATotalEmpHrs = companyA.computeDailyHrs();
+		int totalCompanyAEmpWage = company.calTotalEmpWage( companyATotalEmpHrs );
+		System.out.println("Total Wage of CompanyA Employee: " + totalCompanyAEmpWage);
+
+		EmpWageComputation B = new EmpWageComputation( 50, 15, 75 );
+		int BTotalEmpHrs = B.computeDailyHrs();
+		int totalBEmpWage = B.calTotalEmpWage( BTotalEmpHrs );
+		System.out.println("Total Wage of B Employee: " + totalBEmpWage );
+
+
 }
 }
