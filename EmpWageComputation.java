@@ -9,7 +9,7 @@ public class EmpWageComputation {
 		this.NUM_OF_WORKING_DAYS = NUM_OF_WORKING_DAYS;
 		this.MAX_HRS_IN_MONTH = MAX_HRS_IN_MONTH;
 	}
-public static int calTotalEmpWage( int totalEmpHrs )	{
+public static int computeTotalEmpHrs( )	{
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 		int empCheck = (int) ( Math.random() * 10 ) % 2;
 		while ( totalEmpHrs <= MAX_HRS_IN_MONTH &&
@@ -39,13 +39,13 @@ public int calTotalEmpWage( int totalEmpHrs )	{
 
 	public static void main(String args[]) {
 		EmpWageComputation companyA = new EmpWageComputation( 20, 20, 100 );
-		int companyATotalEmpHrs = companyA.computeDailyHrs();
-		int totalCompanyAEmpWage = company.calTotalEmpWage( companyATotalEmpHrs );
+		int totalCompanyAEmpWage = companyA.computerTotalEmpHrs( );
+		int totalCompanyAEmpWage = companyA.calTotalEmpWage( companyATotalEmpHrs );
 		System.out.println("Total Wage of CompanyA Employee: " + totalCompanyAEmpWage);
 
 		EmpWageComputation B = new EmpWageComputation( 50, 15, 75 );
-		int BTotalEmpHrs = B.computeDailyHrs();
-		int totalBEmpWage = B.calTotalEmpWage( BTotalEmpHrs );
+		int BTotalEmpHrs = B.computeTotalEmpHrs();
+		int totalBEmpWage = B.computeTotalEmpHrs( BTotalEmpHrs );
 		System.out.println("Total Wage of B Employee: " + totalBEmpWage );
 
 
