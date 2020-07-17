@@ -1,9 +1,9 @@
 public class EmpWageComputation {
 	public static final int IS_PART_TIME = 1;
 	public static final int IS_FULL_TIME = 2;
-	public static int EMP_RATE_PER_HOUR ;
-	public static int NUM_OF_WORKING_DAYS;
-	public static int MAX_HRS_IN_MONTH;
+	public static final int EMP_RATE_PER_HOUR ;
+	public static final int NUM_OF_WORKING_DAYS;
+	public static final int MAX_HRS_IN_MONTH;
 	public EmpWageComputation( int EMP_RATE_PER_HOUR, int NUM_OF_WORKING_DAYS, int MAX_HRS_IN_MONTH )	{
 		this.EMP_RATE_PER_HOUR = EMP_RATE_PER_HOUR;
 		this.NUM_OF_WORKING_DAYS = NUM_OF_WORKING_DAYS;
