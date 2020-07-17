@@ -4,6 +4,9 @@ public class EmpWageComputation {
 	public static final int EMP_RATE_PER_HOUR = 20;
 	public static final int NUM_OF_WORKING_DAYS = 20;
 	public static final int MAX_HRS_IN_MONTH = 100;
+public static int calTotalEmpWage( int totalEmpHrs )	{
+		return totalEmpHrs * EMP_RATE_PER_HOUR;
+	}
 	public static void main(String args[]) {
 		int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 		int empCheck = (int) ( Math.random() * 10 ) % 2;
@@ -26,6 +29,7 @@ public class EmpWageComputation {
 
 
 }
-int totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
+int totalEmpWage = calTotalEmpWage( totalEmpHrs );
+System.out.println("Total Emp Wage: " + totalEmpWage);
 }
 }
