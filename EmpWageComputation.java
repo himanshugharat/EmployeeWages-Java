@@ -1,4 +1,9 @@
-public class EmpWageComputation {
+interface WageMethod	{
+
+	public void computeTotalEmpWage( CompanyEmpWage obj );
+
+}
+public class EmpWageComputation implements WageMethod {
 	public final int IS_PART_TIME = 1;
 	public final int IS_FULL_TIME = 2;
 
