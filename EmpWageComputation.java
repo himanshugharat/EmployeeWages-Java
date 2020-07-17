@@ -34,11 +34,12 @@ public void computeTotalEmpWage( CompanyEmpWage companyEmployee )	{
 
 
 	public static void main(String args[]) {
-		CompanyEmpWage[] company = new CompanyEmpWage[2];
-		company[0] = new CompanyEmpWage( "CompanyA", 20, 20, 100 );
-		empwagecomputation.computeTotalEmpWage(company[0]);
-		company[1] = new CompanyEmpWage( "CompanyB", 30, 20, 70 );
-		empwagecomputation.computeTotalEmpWage(company[1]);
+		EmpWageComputation empwagecomputation = new EmpWageComputation();
+		ArrayList<CompanyEmpWage> company = new ArrayList<CompanyEmpWage>();
+		company.add( new CompanyEmpWage( "CompanyA", 20, 20, 100 ));
+		empwagecomputation.computeTotalEmpWage(company.get(0));
+		company.add( new CompanyEmpWage( "GOOGLE", 30, 20, 70 ));
+		empwagecomputation.computeTotalEmpWage(company.get(1));
 }
 }
 class CompanyEmpWage	{
